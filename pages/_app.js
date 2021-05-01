@@ -6,14 +6,8 @@ const MyApp = ({ Component, pageProps }) => {
       <Link href="/">
        <a>Home</a>
       </Link>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-      <Link href="/contact">
-        <a>Contact</a>
-      </Link>
+      
       <Component {...pageProps} />
-      <footer>From John Mayers tutorial</footer>
     </>
   );
 };
