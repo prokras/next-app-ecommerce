@@ -35,7 +35,7 @@ const Price = styled.p`
 const renderProduct = (product, addItemToCart) => {
   const handleClick = (e) => {
     e.stopPropagation();
-    addItemToCart(product.id);
+    addItemToCart(product);
   };
 
   return (
