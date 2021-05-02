@@ -2,12 +2,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import marked from 'marked';
 import styled from 'styled-components';
-
-const Container = styled.div`
-  background-color: #fff;
-  padding: 1rem 2rem;
-  margin: 1rem 0;
-`;
+import Page from '../../components/styled/Page';
 
 const Title = styled.div`
   display: flex;
@@ -34,14 +29,14 @@ const Product = ({ product: { data, content } }) => {
   const html = marked(content);
 
   return (
-    <Container>
+    <Page>
       <Title>
         <h1>{data.name}</h1>
         <SubTitle>{data.description}</SubTitle>
       </Title>
       <Price>${data.price / 100}</Price>
       <div dangerouslySetInnerHTML={{ __html: html }} />
-    </Container>
+    </Page>
   );
 };
 

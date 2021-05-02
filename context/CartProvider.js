@@ -7,6 +7,7 @@ const CartProvider = ({ children }) => {
   
   const [cart, setCart] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     const initialCart = getInitialCart();
@@ -17,6 +18,12 @@ const CartProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
+    
+    let newTotal = 0;
+    cart.forEach(item => {
+      newTotal += item.price * item.qty;
+    });
+    setTotal(newTotal);
   }, [cart]);
 
   const openCart = () => setIsOpen(true);
@@ -40,13 +47,21 @@ const CartProvider = ({ children }) => {
     setCart(newCart);
   };
 
+  const clearCart = () => {
+    localStorage.clear('cart');
+    setCart([]);
+  }
+  
+
   const exposed = {
     cart,
     addItemToCart,
     removeItemFromCart,
     openCart,
     closeCart,
+    clearCart,
     isOpen,
+    total,
   };
   
   return (
