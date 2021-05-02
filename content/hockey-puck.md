@@ -1,4 +1,5 @@
 ---
+id: 4
 name: Hockey puck
 description: Awesome Puck
 price: 1600

@@ -1,4 +1,5 @@
 ---
+id: 3
 name: Hockey stick
 description: To be like Wayne
 price: 3600

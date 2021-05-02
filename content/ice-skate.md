@@ -1,4 +1,5 @@
 ---
+id: 2
 name: Ice skate
 description: Great slide 
 price: 1230
